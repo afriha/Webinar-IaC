@@ -30,7 +30,7 @@ resource "aws_vpc" "webinar" {
 }
 resource "aws_subnet" "webinar" {
   vpc_id     = aws_vpc.webinar.id
-  cidr_block = "10.0.2.0/24"
+  cidr_block = "10.0.1.0/24"
 
   tags = {
     Name = "Webinar_subnet"
