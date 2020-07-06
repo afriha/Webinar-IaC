@@ -79,6 +79,7 @@ resource "aws_instance" "webinar" {
   subnet_id              = aws_subnet.webinar.id
   key_name               = aws_key_pair.hako.id
   vpc_security_group_ids = [aws_security_group.base.id]
+  associate_public_ip_address= true
 
 
   tags = {
