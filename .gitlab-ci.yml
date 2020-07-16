@@ -30,8 +30,8 @@ before_script:
 stages:
   - validate
   - build
-  - test
   - deploy
+  - docker-deploy
 
 validate:
   stage: validate
@@ -49,7 +49,6 @@ plan:
       - ${TF_ROOT}/plan.tfplan
     reports:
       terraform: ${TF_ROOT}/tfplan.json
-
 # Separate apply job for manual launching Terraform as it can be destructive
 # action.
 apply:
@@ -62,4 +61,13 @@ apply:
     - plan
   when: manual
   only:
-    - master
+    - tags
+  
+# ansible:
+#   stage: docker-deploy
+#   image: dtzar/helm-kubectl
+#   script:
+#     - ansible-playbook playbook.yml -l server1 -u ubuntu -i hosts
+#   when: manual
+#   only:
+#     - tags
