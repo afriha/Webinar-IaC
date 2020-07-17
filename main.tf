@@ -87,6 +87,17 @@ resource "aws_instance" "webinar" {
     Name = "Webinar"
   }
 }
+data "template_file" "ansible_host" {
+  template = file("${path.module}/ansible/hosts.tpl")
+  vars = {
+    IP             = aws_instance.webinar.public_ip
+  }
+}
+
+resource "local_file" "ansible_host_config" {
+  content  = data.template_file.ansible_host.rendered
+  filename = "${path.module}/ansible/hosts"
+}
 output "ip" {
   value = aws_instance.webinar.public_ip
 }
