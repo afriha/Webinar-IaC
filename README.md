@@ -17,6 +17,9 @@ A brief Terraform + Ansible + Gitlab-CI config that I made for a Webinar (Cloud 
 ## Main Vars
 
 variable "region" {}
+
 variable "access_key" {}
+
 variable "secret_key" {}
+
 variable "ssh_key" {}
