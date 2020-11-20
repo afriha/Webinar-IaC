@@ -1,4 +1,4 @@
-# Webinar AKS
+# Webinar IAC
 A brief Terraform + Ansible + Gitlab-CI config that I made for a Webinar (Cloud ecosystem). The config deploys a small infra in a CI/CD workflow.  
 
 ## Usage
