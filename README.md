@@ -2,7 +2,7 @@
 A brief Terraform + Ansible + Gitlab-CI config that I made for a Webinar (Cloud ecosystem). The config deploys a small infra in a CI/CD workflow.  
 
 ## Usage
-- Add your the required credentials in your gitlab-ci variables
+- Add the required credentials in your gitlab-ci variables
 - Run terraform init \
     -backend-config="address=https://gitlab.com/api/v4/projects/YOUR-PROJECT-ID/terraform/state/YOUR-PROJECT-NAME" \
     -backend-config="lock_address=https://gitlab.com/api/v4/projects/YOUR-PROJECT-ID/terraform/state/"YOUR-PROJECT-NAME"/lock" \
